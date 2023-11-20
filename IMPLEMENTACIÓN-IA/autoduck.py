@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import numpy as np
 import cv2
 import os
@@ -11,6 +11,7 @@ from duckietown_msgs.msg import Twist2DStamped
 import cv2 # importar libreria opencv
 from cv_bridge import CvBridge # importar convertidor de formato de imagenes
 import message_filters
+
 from duckietown.dtros import DTROS, NodeType
 from sensor_msgs.msg import CompressedImage, Image, Joy
 from duckietown_msgs.msg import WheelsCmdStamped
@@ -70,7 +71,8 @@ class TemplateNode(DTROS):
         
         self.pub_pos.publish(smart)
         print("publicado")
-
+        
+"""
 # Se cierra el environment y termina el programa
 def main():
     rospy.init_node('test') #creacion y registro del nodo!
@@ -84,5 +86,12 @@ def main():
 
 if __name__ =='__main__':
     main()
+"""    
+    
+if __name__ =='__main__':
+	# create the node
+	node = TemplateNode(node_name='template_node') # creacion del nodo
+	# keep spinning
+	rospy.spin()
 
 
