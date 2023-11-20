@@ -3,6 +3,6 @@
 
 numpy
 matplotlib
-keras
-tensorflow
+numpy==1.21
+opencv-python
 
