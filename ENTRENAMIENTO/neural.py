@@ -27,11 +27,11 @@ import os
 import matplotlib.pyplot as plt
 import random
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Activation, Conv2D, MaxPooling2D, ZeroPadding2D, GlobalAveragePooling2D, Flatten, BatchNormalization
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation, Conv2D, MaxPooling2D, ZeroPadding2D, GlobalAveragePooling2D, Flatten, BatchNormalization
 # from tensorflow.keras.utils import np_utils
-from tensorflow.keras.utils import to_categorical  # Reemplazar np_utils por to_categorical
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras.utils import to_categorical  # Reemplazar np_utils por to_categorical
+from keras.preprocessing.image import ImageDataGenerator
 import reader as rd  # Asumo que "reader" es un módulo personalizado que tienes en tu proyecto
 
 

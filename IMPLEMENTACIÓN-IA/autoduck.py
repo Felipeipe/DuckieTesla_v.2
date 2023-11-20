@@ -10,20 +10,25 @@ from geometry_msgs.msg import Twist, Point # importar mensajes de ROS tipo geome
 from duckietown_msgs.msg import Twist2DStamped 
 import cv2 # importar libreria opencv
 from cv_bridge import CvBridge # importar convertidor de formato de imagenes
-from sensor_msgs.msg import Image # importar mensajes de ROS tipo Image
+import message_filters
+from duckietown.dtros import DTROS, NodeType
+from sensor_msgs.msg import CompressedImage, Image, Joy
+from duckietown_msgs.msg import WheelsCmdStamped
+
+
 
 path = '/home/fablab/RLTESLA/RLDuckietown/RL'
 #Se tiene modelo de prueba por defecto en carpeta models
 #Se ejecuta el modelo de red neuronal
 
-class Template(object):
-    def __init__(self, args):
-        super(Template, self).__init__()
-        self.args = args
-        #sucribir a joy 
-        self.Sub_Cam = rospy.Subscriber("/duckiebot/camera_node/image/rect", Image, self.callback)
+class TemplateNode(DTROS):
+    def __init__(self, node_name):
+        super(TemplateNode, self).__init__(node_name=node_name, node_type=NodeType.GENERIC)
+        vehicle_name = os.environ['VEHICLE_NAME'] 
+        self._camera_topic = f"/{vehicle_name}/camera_node/image/compressed"
         #publicar la intrucciones del control en possible_cmd
-        self.publi = rospy.Publisher("duckiebot/wheels_driver_node/car_cmd", Twist2DStamped, queue_size = 0)
+        self._wheels_topic=f"/{vehicle_name}/wheels_driver_node/wheels_cmd"
+        self._publisher = rospy.Publisher(self._wheels_topic, WheelsCmdStamped, queue_size=1)
         self.pub_pos = rospy.Publisher("/duckiebot/smart", Point, queue_size = 1) 
         self.twist = Twist2DStamped()
         self.model = tf.keras.models.load_model(os.path.join(path,"models", "modeloco.h5"))
@@ -33,7 +38,7 @@ class Template(object):
         smart = Point()
         bridge = CvBridge()
         image = bridge.imgmsg_to_cv2(msg, "bgr8")
-        img = image[90:240,0:320]
+        img = image[180:480, :, :]
         scale_percent = 25 # porcentaje de la imagen original
         width = int(img.shape[1] * scale_percent / 100)
         height = int(img.shape[0] * scale_percent / 100)
