@@ -1,10 +1,9 @@
 # parameters
-ARG REPO_NAME="<REPO_NAME_HERE>"
-ARG DESCRIPTION="<DESCRIPTION_HERE>"
-ARG MAINTAINER="<YOUR_FULL_NAME> (<YOUR_EMAIL_ADDRESS>)"
+ARG REPO_NAME="duckietesla_v.2"
+ARG DESCRIPTION="Proyecto que usa imitation learning para el manejo autonomo en las calles de duckietown"
+ARG MAINTAINER="Matias Opazo, Francisco Gonzalez, Felipe Gonzalez (matiasopazo34@gmail.com, fgonzalezurriola@gmail.com, gonzalezpobletefelipe@gmail.com)"
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/
-ARG ICON="cube"
-
+ARG ICON="space-shuttle"
 # ==================================================>
 # ==> Do not change the code below this line
 ARG ARCH
