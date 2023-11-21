@@ -55,13 +55,11 @@ class TemplateNode(DTROS):
 		agregar:
 		velocidad = str(axes)
 		"""
-		avanzar = msg_joy.axes[0]
-		if msg_joy.axes[1]>=0:
-			left=msg_joy.axes[1]
-			right=-msg_joy.axes[1]
-		elif msg_joy.axes[1]<0:
-			left=-msg_joy.axes[1]
-			right=msg_joy.axes[1]
+		avanzar = msg_joy.axes[1] #va a la izquierda
+		if msg_joy.axes[3]>=0: 
+			left=msg_joy.axes[3]
+		elif msg_joy.axes[3]<0:
+			right=-msg_joy.axes[3]
 		
 		velocidad = str(str(avanzar)+","+str(left)+","+str(right))
 		print("esta es la velocidad: "+velocidad)
