@@ -48,6 +48,13 @@ class TemplateNode(DTROS):
 		print("la imagen "+str(nombre)+" se guardó bien uwu")
 
 		#CAPTURA DE VELOCIDADES
+		"""
+		sugerencia de código
+		eliminar las lineas 58-66
+
+		agregar:
+		velocidad = str(axes)
+		"""
 		avanzar = msg_joy.axes[0]
 		if msg_joy.axes[1]>=0:
 			left=msg_joy.axes[1]
@@ -55,6 +62,7 @@ class TemplateNode(DTROS):
 		elif msg_joy.axes[1]<0:
 			left=-msg_joy.axes[1]
 			right=msg_joy.axes[1]
+		
 		velocidad = str(str(avanzar)+","+str(left)+","+str(right))
 		print("esta es la velocidad: "+velocidad)
 		# direction = "vel" #aqui esta el absolute
