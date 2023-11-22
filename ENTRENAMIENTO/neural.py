@@ -54,8 +54,7 @@ print("Training Y matrix shape", Y_train.shape)
 model = Sequential()                                   # Apilado lineal de capas
 
 # Capa de convolución 1
-#model.add(Conv2D(32, (3, 3), input_shape=(37,80,3))) # 32 kernels de 3x3 diferentes --> 32 feature map
-model.add(Conv2D(32, (3, 3), input_shape=(70,160,3))) # 32 kernels de 3x3 diferentes --> 32 feature map, aqui va el tamaño de las imágenes
+model.add(Conv2D(32, (3, 3), input_shape=(75,160,3))) # 32 kernels de 3x3 diferentes --> 32 feature map, aqui va el tamaño de las imágenes
 model.add(BatchNormalization(axis=-1))                 # normalizar cada feature map antes de la activación
 convLayer01 = Activation('relu')                       # activación
 model.add(convLayer01)
@@ -95,7 +94,7 @@ model.add(Activation('softmax'))                     # activacion softmax
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 #Se entrega dirección donde se guarda el modelo (modificar)
-path = '/home/matiuwu/Escritorio/Laboratory juju/DuckieTesla_v.2/ENTRENAMIENTO'
+path = 'D:\modelo_de_ia'
 # Se corre el modelo con el conjunto de entrenamiento
 #En este caso en particular no se uso un conjunto de validación exterior
 name = 'modeloco'
