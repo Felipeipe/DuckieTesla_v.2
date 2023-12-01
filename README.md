@@ -10,7 +10,7 @@ Este es un proyecto el cual consiste en la conducción autonoma de un duckiebot.
 
 ### Hardware
 
-- Duckiebot Modelo DB-J, con Ubuntu 20.04 instalado
+- Duckiebot Modelo DB21J con Sd flasheada
 - Pc con Ubuntu 20.04 instalado, con 40 GB de espacio libre extra, para los datos de entrenamiento
 
 ### Software e instalación de dependencias
