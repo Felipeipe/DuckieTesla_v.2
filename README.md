@@ -56,3 +56,17 @@ dts init_sd_card --hostname <Nombre de duckie> --type duckiebot --configuration 
 ### ROS
 
 Seguir [este tutorial](http://wiki.ros.org/noetic/Installation/Ubuntu). Si no sabes como modificar el archivo .bashrc, debes seguir [este otro tutorial](https://www.digitalocean.com/community/tutorials/bashrc-file-in-linux)
+
+### Cuda
+
+Para la instalación de este programa, debes seguir estos tutoriales:
+
+
+## Recopilar datos de entrenamiento
+
+Para poder recopilar los datos de entrenamiento, lo que deben hacer es ejecutar en la terminal, estando en la carpeta .../(*agregar el directorio que corresponde*):
+
+```Bash
+dts devel build -f
+dts devel run
+```
