@@ -10,7 +10,8 @@ Este es un proyecto el cual consiste en la conducción autonoma de un duckiebot.
 
 ### Hardware
 
-- Duckiebot Modelo DB21J con Sd flasheada
+- Duckiebot Modelo DB21J con Sd flasheada. Si no se ha flasheado aun, puedes acceder a [este tutorial](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_sd_card/cli.html), pero habiendo hecho la instalación de DTS, mostrado en los pasos siguientes.
+
 - Pc con Ubuntu 20.04 instalado, con 40 GB de espacio libre extra, para los datos de entrenamiento
 
 ### Software e instalación de dependencias
@@ -44,7 +45,13 @@ pip install matplotlib
 
 ### DTS
 
-Para la instalación de Duckietown Shell, debe seguirse una serie de pasos para poder configurarlo correctamente. Debe seguir al pie de la letra [este tutorial](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/setup_dependencies.html). Debes completar las secciones de [*laptop setup*](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) y de [*accounts*](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_account/index.html) para luego seguir el readme de [este repositorio](https://github.com/duckietown/duckietown-lx) hasta la sección 2
+Para la instalación de Duckietown Shell, debe seguirse una serie de pasos para poder configurarlo correctamente. Debe seguir al pie de la letra [este tutorial](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/setup_dependencies.html). Debes completar las secciones de [*laptop setup*](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) y de [*accounts*](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_account/index.html) para luego seguir el readme de [este repositorio](https://github.com/duckietown/duckietown-lx) hasta la sección 2.
+
+Para poder flashear la sd, debes ejecutar este comando:
+
+```Bash
+dts init_sd_card --hostname <Nombre de duckie> --type duckiebot --configuration DB21J --wifi <WIFI>:<WIFI-password>
+```
 
 ### ROS
 
